@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Hamilton Conference
+Torte Author:Shi Yingbo
+Student ID: 19023254
+Date:2019-10-08-->
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0"/>
+<title>Hamilton Conference</title>
+<script src="modernizr-1.5.js"></script>
+      <link href="hcc.css" rel="stylesheet" />
+      <link href="schedule.css" rel="stylesheet" />
+</head>
+<body>
+	<img src="hcclogo.jpg" alt="hcclogo.jpg"/>
+	<nav class="horizontal">
+		<li><a href="#">Home Page</a></li>
+		<li><a href="#">Reservations</a></li>
+		<li><a href="#">Facilities</a></li>
+		<li><a href="#">Virtual Tour</a></li>
+		<li><a href="#">Staff</a></li>
+		<li><a href="#">Calendar of Events</a></li>
+		<li><a href="#">Contact Info</a></li>
+		<li><a href="#">Directions</a></li>
+		<li><a href="#">FAQ</a></li>	
+	</nav>
+	<section>
+		<table border="1">
+  			<caption>Reservations for Conference Rooms<br/>Tuesday, April 11</caption>
+  		<tr>
+    		<th>Month</th>
+    		<th>Savings</th>
+  		</tr>
+  		<tr>
+    		<td>January</td>
+    		<td>$100</td>
+  		</tr>
+		</table>
+	</section>
+</body>
+</html>

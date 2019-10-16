@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="删除资源“dht”" deleteContents="false" description="删除资源“dht”" element1="/dht" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1570942600736"/>
+</session>

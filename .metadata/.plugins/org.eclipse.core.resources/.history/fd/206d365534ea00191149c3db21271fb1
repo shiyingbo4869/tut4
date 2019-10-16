@@ -1,0 +1,306 @@
+package Jtatext;
+ 
+import java.awt.Color;//颜色
+import java.awt.Font;//字体
+import java.awt.event.ActionEvent;//事件处理
+import java.awt.event.ActionListener;//事件监听
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+ 
+import javax.swing.JButton;//按钮
+import javax.swing.JFrame;//框架
+import javax.swing.JLabel;//标签
+import javax.swing.JOptionPane;//消息窗口
+import javax.swing.JPanel;//面板
+import javax.swing.JTextField;//文本框
+ 
+/**
+ * <p>
+ * Title: Replace
+ * </p>
+ * <p>
+ * Description:可视化的txt的内容替换程序
+ * </p>
+ * 
+ * @author fuxuemingzhu
+ * 
+ * @email fuxuemingzhu@163.com
+ * 
+ * @date 2014年12月5日 下午6:27:50
+ */
+public class Search extends JFrame {
+ 
+	/**
+	 * serialVersionUID
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+ 
+	/**
+	 * pnl_mian 主面板
+	 */
+	public JPanel pnl_mian;
+	/**
+	 * lbl_help 提示面板
+	 */
+	public JLabel lbl_help;
+	/**
+	 * lbl_find 查找内容提示
+	 */
+	public JLabel lbl_find;
+	/**
+	 * lbl_replace 替换内容提示
+	 */
+	public JLabel lbl_replace;
+	/**
+	 * lbl_path 路径提示
+	 */
+	public JLabel lbl_path;
+	/**
+	 * txt_path 文本路径输入
+	 */
+	public JTextField txt_path;
+	/**
+	 * txt_find 查找内容输入
+	 */
+	public JTextField txt_find;
+	/**
+	 * txt_replace 替换内容输入
+	 */
+	public JTextField txt_replace;
+	/**
+	 * btn_sub 确定按键
+	 */
+	public JButton btn_sub;
+	/**
+	 * btn_reset 重置按键
+	 */
+	public JButton btn_reset;
+ 
+	/**
+	 * path 文件路径字符串
+	 */
+	public static String path;
+	/**
+	 * find 查找内容字符串
+	 */
+	public static String find;
+	/**
+	 * replace 替换内容字符串
+	 */
+	public static String replace;
+ 
+	/**
+	 * <p>
+	 * Title:Replace
+	 * </p>
+	 * <p>
+	 * Description:构造方法
+	 * </p>
+	 */
+	public Search() {
+		pnl_mian = new JPanel();
+		lbl_help = new JLabel();
+		lbl_find = new JLabel();
+		lbl_replace = new JLabel();
+		lbl_path = new JLabel();
+		txt_path = new JTextField();
+		txt_find = new JTextField();
+		txt_replace = new JTextField();
+		btn_sub = new JButton();
+		btn_reset = new JButton();
+		userInit();
+	}
+ 
+	/**
+	 * <p>
+	 * Title: userInit
+	 * </p>
+	 * <p>
+	 * Description:用户界面设置
+	 * </p>
+	 * 
+	 */
+	public void userInit() {
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 设置关闭框架的同时结束程序
+		this.setSize(400, 250);// 设置框架大小为长500,宽200
+		this.setResizable(false);// 设置框架不可以改变大小
+		this.setTitle("查找替换");// 设置框架标题
+		this.pnl_mian.setLayout(null);// 设置面板布局管理
+		this.pnl_mian.setBackground(Color.cyan);// 设置面板背景颜色
+		this.lbl_help.setText("查找替换");// 设置标签标题
+		this.lbl_help.setFont(new Font("宋体", Font.BOLD | Font.ITALIC, 14));// 设置标签字体
+		this.lbl_help.setForeground(Color.RED);// 设置标签字体颜色
+		this.lbl_path.setText("文本路径:");
+		this.lbl_find.setText("查找文本:");
+		this.lbl_replace.setText("替换为:");
+		this.btn_sub.setText("确定");
+		this.btn_reset.setText("重置");
+		this.lbl_help.setBounds(150, 25, 60, 20);// 设置标签x坐标120,y坐标20,长60,宽20
+		this.lbl_path.setBounds(50, 50, 60, 20);
+		this.lbl_find.setBounds(50, 80, 60, 20);
+		this.lbl_replace.setBounds(50, 110, 60, 25);
+		this.txt_path.setBounds(110, 50, 200, 20);
+		this.txt_find.setBounds(110, 80, 200, 20);
+		this.txt_replace.setBounds(110, 110, 200, 20);
+		this.btn_sub.setBounds(105, 160, 60, 20);
+		this.btn_sub.addActionListener(new ActionListener()// 匿名类实现ActionListener接口
+				{
+					public void actionPerformed(ActionEvent e) {
+						btnsub_ActionEvent(e);
+					}
+				});
+		this.btn_reset.setBounds(195, 160, 60, 20);
+		this.btn_reset.addActionListener(new ActionListener()// 匿名类实现ActionListener接口
+				{
+					public void actionPerformed(ActionEvent e) {
+						btnreset_ActionEvent(e);
+					}
+				});
+		this.pnl_mian.add(lbl_help);// 加载标签到面板
+		this.pnl_mian.add(lbl_path);
+		this.pnl_mian.add(lbl_find);
+		this.pnl_mian.add(lbl_replace);
+		this.pnl_mian.add(txt_path);
+		this.pnl_mian.add(txt_find);
+		this.pnl_mian.add(txt_replace);
+		this.pnl_mian.add(btn_sub);
+		this.pnl_mian.add(btn_reset);
+		this.add(pnl_mian);// 加载面板到框架
+		this.setVisible(true);// 设置框架可显
+	}
+ 
+	/**
+	 * <p>
+	 * Title: btnsub_ActionEvent
+	 * </p>
+	 * <p>
+	 * Description:点击确定键的操作
+	 * </p>
+	 * 
+	 * @param e
+	 * 
+	 */
+	public void btnsub_ActionEvent(ActionEvent e) {
+		path = txt_path.getText();
+		find = txt_find.getText();
+		replace = String.valueOf(txt_replace.getText());
+		if (path.equals("")) {
+			JOptionPane.showMessageDialog(null, "文件路径不能为空！", "错误",
+					JOptionPane.ERROR_MESSAGE);
+			return;
+		} else if (find.equals("")) {
+			JOptionPane.showMessageDialog(null, "查找对象不能为空！", "错误",
+					JOptionPane.ERROR_MESSAGE);
+			return;
+		} else if (replace.equals("")) {
+			JOptionPane.showMessageDialog(null, "替换内容不能为空！", "错误",
+					JOptionPane.ERROR_MESSAGE);
+			return;
+		} else {
+			File file = new File(path);
+			try {
+				changeFile(file);
+			} catch (Exception e1) {
+				e1.printStackTrace();
+				return;
+			}
+			this.dispose();
+		}
+	}
+ 
+	/**
+	 * <p>
+	 * Title: btnreset_ActionEvent
+	 * </p>
+	 * <p>
+	 * Description:点击重置键的操作
+	 * </p>
+	 * 
+	 * @param e
+	 * 
+	 */
+	public void btnreset_ActionEvent(ActionEvent e) {
+		txt_path.setText("");
+		txt_find.setText("");
+		txt_replace.setText("");
+	}
+ 
+	/**
+	 * <p>
+	 * Title: changeFile
+	 * </p>
+	 * <p>
+	 * Description:读取文件
+	 * </p>
+	 * 
+	 * @param file
+	 * @throws Exception
+	 * 
+	 */
+	public static void changeFile(File file) throws IOException {
+		BufferedReader br = null;
+		try {
+			if (!file.exists()) {
+				JOptionPane.showMessageDialog(null, "文件路径有误！", "错误",
+						JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			FileReader fileReader = new FileReader(file);
+			br = new BufferedReader(fileReader);
+			StringBuffer sbf = new StringBuffer("");
+			try {
+				for (String tmp = null; (tmp = br.readLine()) != null; tmp = null) {
+					// 在这里做替换操作
+					if (tmp.contains(find)) {
+						tmp = tmp.replaceAll(find, replace);
+						sbf.append(tmp);
+						sbf.append(System.getProperty("line.separator"));
+						// 文件的重新写入
+						BufferedWriter bw = new BufferedWriter(new FileWriter(
+								path));
+						bw.write(sbf.toString());
+						JOptionPane.showMessageDialog(null, "文件内容已经替换成功！",
+								"确定", JOptionPane.YES_OPTION);
+						bw.close();
+					} else {
+						JOptionPane.showMessageDialog(null, "文件中不含有要替换的内容！",
+								"确定", JOptionPane.YES_OPTION);
+					}
+ 
+				}
+				br.close();
+			} catch (IOException e1) {
+				JOptionPane.showMessageDialog(null, "文件读取有误！", "错误",
+						JOptionPane.ERROR_MESSAGE);
+				e1.printStackTrace();
+				return;
+			}
+		} catch (FileNotFoundException e1) {
+			JOptionPane.showMessageDialog(null, "文件路径有误！", "错误",
+					JOptionPane.ERROR_MESSAGE);
+			e1.printStackTrace();
+			return;
+		}
+	}
+ 
+	/**
+	 * <p>
+	 * Title: main
+	 * </p>
+	 * <p>
+	 * Description:main方法，程序的入口
+	 * </p>
+	 * 
+	 * @param args
+	 * 
+	 */
+	public static void main(String[] args) {
+		new Search();
+	}
+}

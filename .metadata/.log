@@ -1,0 +1,320 @@
+!SESSION 2019-10-14 10:36:00.498 -----------------------------------------------
+eclipse.buildId=4.12.0.I20190605-1800
+java.version=1.8.0_201
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+This is a continuation of log file C:\Users\LENOVO\eclipse-workspace\.metadata\.bak_0.log
+Created Time: 2019-10-14 10:36:09.195
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2019-10-14 10:36:09.196
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.recommenders.news.rcp/org.eclipse.recommenders.internal.news.rcp.poll.PollNewsFeedsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2019-10-14 10:36:09.205
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.recommenders.news.rcp/org.eclipse.recommenders.internal.news.rcp.read.ReadNewsItemsHandler
+
+!ENTRY org.eclipse.egit.core 1 0 2019-10-14 10:36:10.348
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.jface 2 0 2019-10-14 10:36:12.232
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-10-14 10:36:12.232
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.ui.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,运行／调试,运行／调试命令类别,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6ce8bf64,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,运行／调试,运行／调试命令类别,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6413eeb7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-10-14 10:36:12.232
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.ui.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,运行／调试,运行／调试命令类别,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@956cf3d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,运行／调试,运行／调试命令类别,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@712213ed,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-10-14 10:36:30.599
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\LENOVO'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2019-10-16 15:58:16.423 -----------------------------------------------
+eclipse.buildId=4.12.0.I20190605-1800
+java.version=1.8.0_201
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2019-10-16 15:58:24.788
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.recommenders.news.rcp/org.eclipse.recommenders.internal.news.rcp.poll.PollNewsFeedsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2019-10-16 15:58:24.792
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.recommenders.news.rcp/org.eclipse.recommenders.internal.news.rcp.read.ReadNewsItemsHandler
+
+!ENTRY org.eclipse.egit.core 1 0 2019-10-16 15:58:26.260
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.jface 2 0 2019-10-16 15:58:28.574
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-10-16 15:58:28.574
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.ui.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,运行／调试,运行／调试命令类别,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2dc319cf,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,运行／调试,运行／调试命令类别,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1690929,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-10-16 15:58:28.574
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.ui.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,运行／调试,运行／调试命令类别,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@34d26a68,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,运行／调试,运行／调试命令类别,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@fef2768,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-10-16 15:58:43.060
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\LENOVO'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-10-16 15:59:19.168
+!MESSAGE Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-10-16 15:59:19.173
+!MESSAGE Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-10-16 15:59:19.908
+!MESSAGE Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-10-16 15:59:19.912
+!MESSAGE Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:22.218
+!MESSAGE ReviewCodeCmd started with 1 selected resources on projects [shi]
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:22.227
+!MESSAGE ReviewCodeCmd: visiting project shi: 214 resources found.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.051
+!MESSAGE Duplicated Rule found: AvoidReassigningParameters. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.052
+!MESSAGE Duplicated Rule found: IfStmtsMustUseBraces. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.054
+!MESSAGE Duplicated Rule found: EmptyIfStmt. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.056
+!MESSAGE Duplicated Rule found: ForLoopsMustUseBraces. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.058
+!MESSAGE Duplicated Rule found: EmptyIfStmt. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.061
+!MESSAGE Duplicated Rule found: AssignmentInOperand. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.063
+!MESSAGE Duplicated Rule found: ForLoopsMustUseBraces. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.065
+!MESSAGE Duplicated Rule found: OneDeclarationPerLine. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.066
+!MESSAGE Duplicated Rule found: FieldNamingConventions. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.068
+!MESSAGE Duplicated Rule found: WhileLoopsMustUseBraces. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.069
+!MESSAGE Duplicated Rule found: VariableNamingConventions. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.071
+!MESSAGE Duplicated Rule found: EmptyCatchBlock. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.073
+!MESSAGE Duplicated Rule found: TooManyMethods. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.074
+!MESSAGE Duplicated Rule found: ExcessiveClassLength. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.075
+!MESSAGE Duplicated Rule found: CyclomaticComplexity. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.077
+!MESSAGE Duplicated Rule found: CollapsibleIfStatements. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.078
+!MESSAGE Duplicated Rule found: CyclomaticComplexity. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.079
+!MESSAGE Duplicated Rule found: NcssMethodCount. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.081
+!MESSAGE Duplicated Rule found: WhileLoopsMustUseBraces. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.082
+!MESSAGE Duplicated Rule found: EmptyStatementBlock. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.083
+!MESSAGE Duplicated Rule found: MethodNamingConventions. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.085
+!MESSAGE Duplicated Rule found: ExcessiveMethodLength. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.086
+!MESSAGE Duplicated Rule found: MethodWithSameNameAsEnclosingClass. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.089
+!MESSAGE Duplicated Rule found: TooManyFields. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.090
+!MESSAGE Duplicated Rule found: IfElseStmtsMustUseBraces. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.092
+!MESSAGE Duplicated Rule found: AvoidDeeplyNestedIfStmts. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.093
+!MESSAGE Duplicated Rule found: TooManyFields. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.095
+!MESSAGE Duplicated Rule found: NcssTypeCount. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.096
+!MESSAGE Duplicated Rule found: ExcessivePublicCount. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.098
+!MESSAGE Duplicated Rule found: IfElseStmtsMustUseBraces. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.099
+!MESSAGE Duplicated Rule found: NcssMethodCount. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.100
+!MESSAGE Duplicated Rule found: ExcessiveParameterList. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.102
+!MESSAGE Duplicated Rule found: StdCyclomaticComplexity. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.103
+!MESSAGE Duplicated Rule found: LocalVariableNamingConventions. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.105
+!MESSAGE Duplicated Rule found: NcssConstructorCount. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.106
+!MESSAGE Duplicated Rule found: FormalParameterNamingConventions. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.108
+!MESSAGE Duplicated Rule found: ClassNamingConventions. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.109
+!MESSAGE Duplicated Rule found: IfStmtsMustUseBraces. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.111
+!MESSAGE Duplicated Rule found: NPathComplexity. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.112
+!MESSAGE Duplicated Rule found: AvoidDeeplyNestedIfStmts. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.113
+!MESSAGE Duplicated Rule found: ExcessiveParameterList. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.115
+!MESSAGE Duplicated Rule found: EmptyWhileStmt. This rule will be ignored.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.229
+!MESSAGE Determined applicable file extensions: [jsp, pkb, js, typ, pkh, jspf, pom, sql, xsl, java, xml, pck, pks, fnc, tag, jspx, prc, plb, tpb, trg, pld, cls, trigger, plh, component, pls, tps, vm, xslt, page, tyb]
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:23.246
+!MESSAGE Creating new auxclasspath class loader for project shi
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 2 0 2019-10-16 15:59:24.562
+!MESSAGE There were configuration errors!
+LoosePackageCoupling: No packages or classes specified
+
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 2 0 2019-10-16 15:59:26.243
+!MESSAGE There were configuration errors!
+LoosePackageCoupling: No packages or classes specified
+
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 2 0 2019-10-16 15:59:26.420
+!MESSAGE There were configuration errors!
+LoosePackageCoupling: No packages or classes specified
+
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 2 0 2019-10-16 15:59:26.825
+!MESSAGE There were configuration errors!
+LoosePackageCoupling: No packages or classes specified
+
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 2 0 2019-10-16 15:59:27.274
+!MESSAGE There were configuration errors!
+LoosePackageCoupling: No packages or classes specified
+
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:27.308
+!MESSAGE Determined applicable file extensions: [jsp, pkb, js, typ, pkh, jspf, pom, sql, xsl, java, xml, pck, pks, fnc, tag, jspx, prc, plb, tpb, trg, pld, cls, trigger, plh, component, pls, tps, vm, xslt, page, tyb]
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:27.332
+!MESSAGE Determined applicable file extensions: [jsp, pkb, js, typ, pkh, jspf, pom, sql, xsl, java, xml, pck, pks, fnc, tag, jspx, prc, plb, tpb, trg, pld, cls, trigger, plh, component, pls, tps, vm, xslt, page, tyb]
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 2 0 2019-10-16 15:59:27.587
+!MESSAGE There were configuration errors!
+LoosePackageCoupling: No packages or classes specified
+
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:27.610
+!MESSAGE Determined applicable file extensions: [jsp, pkb, js, typ, pkh, jspf, pom, sql, xsl, java, xml, pck, pks, fnc, tag, jspx, prc, plb, tpb, trg, pld, cls, trigger, plh, component, pls, tps, vm, xslt, page, tyb]
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:27.649
+!MESSAGE Review code command finished. 381 rules were executed against 6 files. Actual PMD duration is about 4221ms, that is about 703.5 ms/file, 11.07874 ms/rule, 1.8464566 ms/filerule
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 1 0 2019-10-16 15:59:27.651
+!MESSAGE Command ReviewCode excecuted in 5437ms

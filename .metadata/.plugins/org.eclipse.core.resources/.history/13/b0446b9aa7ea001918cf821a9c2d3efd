@@ -1,0 +1,38 @@
+@charset "UTF-8";
+section table{
+	border-collapse: collapse;
+	border-color:rgb(255,238,223);
+}
+section table thead{
+	background-color: rgb(0,255,255);
+}
+section table tbody{
+	background-color: rgb(0,255,255);
+}
+section table tfoot th{
+	background-color: rgb(255,255,240);
+	vertical-align:top;
+	font-size:15px;
+}
+section table tfoot td{
+	vertical-align:top;
+	font-size:15px;
+}
+section table caption{
+	caption-side:top-right;
+	text-align:right;
+}
+
+/* Article paragraph */
+article p {
+   -moz-column-count: 2;
+   -webkit-column-count: 2;
+    column-count: 2;
+
+   -moz-column-gap: 20px;
+   -webkit-column-gap: 20px;
+    column-gap: 20px;
+}  
+article table{
+	background:rgb(255,234,134);
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/159272-Tut2/src/nz/ac/massey/cs/pp/tutorial2/id19023254/CSV2HTMLConverter.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="nz.ac.massey.cs.pp.tutorial2.id19023254.CSV2HTMLConverter"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="students.csv students.html &#13;&#10;C:\Users\LENOVC:\Users\LENOVO\Desktop\tut2 C:C:\Users\LENOVO\Desktop\tut2.csv C:\Users\LENOVOC:\Users\LENOVO\Desktop\tut2"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="159272-Tut2"/>
+</launchConfiguration>

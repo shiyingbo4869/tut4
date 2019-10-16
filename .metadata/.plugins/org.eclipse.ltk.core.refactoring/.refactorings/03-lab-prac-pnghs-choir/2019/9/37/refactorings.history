@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“03-lab-prac-pnghs-choir/choirtxt.htm”重命名为“choir.htm”" description="重命名资源“choirtxt.htm”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="choirtxt.htm" name="choir.htm" stamp="1567912371535" updateReferences="true"/>&#x0A;<refactoring comment="将资源“03-lab-prac-pnghs-choir/pnghsc_stylestxt.css”重命名为“pnghsc_styles.css”" description="重命名资源“pnghsc_stylestxt.css”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="pnghsc_stylestxt.css" name="pnghsc_styles.css" stamp="1567912427498" updateReferences="true"/>
+</session>

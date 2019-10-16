@@ -1,0 +1,213 @@
+package Jtatext;
+
+/*import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+public class Print extends JFrame implements Printable, 	ActionListener {
+	private Object[][] data = {{"100", "0.8", "0.1", "90"}};	
+	//JTableb表头
+	private Object[] head = {"单价", "折扣", "税", "调整后价"}; 	//定义一个存放数据的JTable	
+	private JTable table = new JTable(data, head);	//打印出一条记录的按钮	
+	private JButton printBtn = new JButton("打印");   	
+	private JScrollPane scrollPane = new JScrollPane();	//设置窗口的信息，添加各种面板按钮，及初始化按钮的监听器。	
+	public Print() {	
+		setSize(800, 600);	//设置窗体大小位置	
+		add(printBtn, BorderLayout.NORTH);	
+		add(scrollPane, BorderLayout.CENTER);	
+		printBtn.addActionListener(this);	
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
+		setVisible(true);	
+		}	
+	@Override	
+	public void actionPerformed(ActionEvent e) {
+		//获取打印服务对象  	
+		PrinterJob job = PrinterJob.getPrinterJob();       	
+		job.setPrintable(Print.this); //添加打印任务	
+		try {  	
+			job.print();  //执行打印任务	
+		} catch (PrinterException e1) {
+			e1.printStackTrace();  	
+		}  	
+		JOptionPane.showMessageDialog(this, 	"导出打印pdf文件成功");
+	}	
+	@Override	
+	public int print(Graphics graphics, PageFormat pageFormat, 	int pageIndex) throws PrinterException {
+		Graphics2D g = (Graphics2D) graphics;  
+		int x = (int)pageFormat.getImageableX(); 
+		int y = (int)pageFormat.getImageableY();
+		switch(pageIndex){
+		case 0:  	g.setColor(Color.RED);
+		g.drawString("单价：" + table.getValueAt(0, 0), x + 100, y + 10);
+		g.drawString("折扣：" + table.getValueAt(0, 1), x + 100, y + 30);
+		g.drawString("税率：" + table.getValueAt(0, 2), x + 100, y + 50);	
+		g.drawString("单价：" + table.getValueAt(0, 3), x + 100, y + 70);	
+		return PAGE_EXISTS;  
+		default:  	return NO_SUCH_PAGE;  	
+		}  	
+	}
+	public static void main(String[] args) {
+		new Print();	
+		}
+}*/
+
+
+/**
+ * 生成PDF文件
+ * @author 于学明
+ *
+ */
+public class Print{
+
+/**
+ * 获得PDF文件所需图片
+ * @param imagePath  //图片文件路径
+ * @return
+ * @throws BadElementException
+ * @throws MalformedURLException
+ * @throws IOException
+ */
+ public Image getImageFile(String imagePath) throws BadElementException, MalformedURLException, IOException{
+  Image jpg = Image.getInstance(imagePath);
+  //设置图片居中
+  jpg.setAlignment(Image.MIDDLE);
+  return jpg;
+ }
+ 
+ /**
+  * 获得文字内容
+  * @param inputFilePath 原DOC文件路径
+  * @param outputFilePath 生成HTML文件路径
+  * @return
+  */
+ public String getPdfContext(String inputFilePath,String outputFilePath){
+//  读取DOC文件内容
+  String htmlText = new FileExtracter().extractDoc(inputFilePath, outputFilePath);
+  //把读取的HTML文件,生成一个字符串
+  String pdf =  new FileExtracter().getContext(htmlText);
+  
+  return pdf;
+ }
+ /**
+  * 用ITEXT生成指定PDF格式文件
+  * @param imagePath0
+  * @param inputFilePath
+  * @param outputFilePath
+  * @param imagePath1
+  * @param outputPdf
+  * @return
+  * @throws DocumentException
+  * @throws IOException
+  */
+ public String createPDF(String imagePath0,String inputFilePath,String outputFilePath,String imagePath1,String outputPdf) throws DocumentException, IOException{
+  
+  //返回的pdf全路径  
+  String returnPdf="";  
+  File dir=new File("out_pdf");
+  //若目录不存在则新建该目录
+  if(!dir.exists()){
+   dir.mkdir();
+  }
+    
+  //新建空白文件
+  File outPdfPath=new File(dir+"/"+outputPdf);//输出pdf文件的全路径
+  try {
+   outPdfPath.createNewFile();
+  } catch (IOException e1) {
+   e1.printStackTrace();
+   returnPdf=null;
+  }
+  //定义PDF文件大小和边距
+  Document document = new Document(PageSize.A4, 50, 50, 50, 50);  
+  //生成PDF文件的路径
+  PdfWriter writer = PdfWriter.getInstance(document,new FileOutputStream(outPdfPath));
+  writer.setViewerPreferences(PdfWriter.PageModeFullScreen);
+  document.open();
+  //文件头图片
+  document.add(getImageFile(imagePath0));
+  //定义字体,可以正常显示中文
+  BaseFont bfComic = BaseFont.createFont("STSong-Light","UniGB-UCS2-H", BaseFont.NOT_EMBEDDED);
+  Font font = new Font(bfComic, 12, Font.NORMAL);
+    
+  String pdf =  getPdfContext(inputFilePath, outputFilePath);
+//  String str=new String(pdf.getBytes("ISO-8859-1"),"GB2312");
+  document.add(new Paragraph(pdf,font));
+  //文件尾图片
+  document.add(getImageFile(imagePath1));
+  document.close();
+  returnPdf = outPdfPath.getAbsolutePath();
+  return returnPdf;
+ }
+ 
+ /**
+  *  用ITEXT生成指定PDF格式文件
+  * @param imagePath
+  * @param inputFilePath
+  * @param outputFilePath
+  * @param outputPdf
+  * @return
+  * @throws DocumentException
+  * @throws IOException
+  */
+ public String createPDF(String imagePath,String inputFilePath,String outputFilePath,String outputPdf) throws DocumentException, IOException{
+  
+  //  返回的pdf全路径  
+  String returnPdf="";  
+  File dir=new File("out_pdf");
+  //若目录不存在则新建该目录
+  if(!dir.exists()){
+   dir.mkdir();
+  }
+    
+  //新建空白文件
+  File outPdfPath=new File(dir+"/"+outputPdf);//输出pdf文件的全路径
+  try {
+   outPdfPath.createNewFile();
+  } catch (IOException e1) {
+   e1.printStackTrace();
+   returnPdf=null;
+  }
+  Document document = new Document(PageSize.A4, 50, 50, 50, 50);  
+  //生成PDF文件的路径
+  PdfWriter writer = PdfWriter.getInstance(document,new FileOutputStream(outPdfPath));
+  writer.setViewerPreferences(PdfWriter.PageModeFullScreen);
+  document.open();  
+  document.add(getImageFile(imagePath));
+//  定义字体,可以正常显示中文
+  BaseFont bfComic = BaseFont.createFont("STSong-Light","UniGB-UCS2-H", BaseFont.NOT_EMBEDDED);
+  Font font = new Font(bfComic, 12, Font.NORMAL);
+    
+  String pdf =  getPdfContext(inputFilePath, outputFilePath);
+//  String str=new String(pdf.getBytes("ISO-8859-1"),"GB2312");
+  document.add(new Paragraph(pdf,font));
+  document.close();
+  returnPdf = outPdfPath.getAbsolutePath();
+  return returnPdf;
+ }
+
+ public static void main(String [] args){
+  
+  try {
+   String s = new CreatePdf().createPDF("c:/a.gif","c:/s.doc", "c:/x.html", "a.pdf");
+   System.out.println(s);
+  } catch (DocumentException e) {
+   // TODO 自动生成 catch 块
+   e.printStackTrace();
+  } catch (IOException e) {
+   // TODO 自动生成 catch 块
+   e.printStackTrace();
+  }
+ }
+}
+ 

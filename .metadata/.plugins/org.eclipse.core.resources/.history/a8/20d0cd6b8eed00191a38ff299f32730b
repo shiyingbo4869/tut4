@@ -1,0 +1,5 @@
+package com.keving.po;
+
+public @interface NoteType {
+
+}

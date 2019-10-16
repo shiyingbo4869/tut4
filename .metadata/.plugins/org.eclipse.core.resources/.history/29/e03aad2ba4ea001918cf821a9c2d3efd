@@ -1,0 +1,35 @@
+@charset "UTF-8";
+section table{
+	border-collapse: collapse;
+	border-color:grey;
+}
+section table thead{
+	background-color: rgb(72,209,204);
+}
+section table tbody{
+	background-color: rgb(72,209,204);
+}
+section table tfoot th{
+	background-color: rgb(135,206,235);
+	vertical-align:top;
+	font-size:14px;
+}
+section table tfoot td{
+	vertical-align:top;
+	font-size:14px;
+}
+section table caption{
+	caption-side:top-right;
+	text-align:right;
+}
+
+/* Two column layout for the introductory paragraph */
+article p {
+   -moz-column-count: 2;
+   -webkit-column-count: 2;
+    column-count: 2;
+
+   -moz-column-gap: 20px;
+   -webkit-column-gap: 20px;
+    column-gap: 20px;
+}  

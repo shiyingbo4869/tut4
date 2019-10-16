@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“04 - Lab Practical - Cycle Pathology Review - Student Data Files/racetxt.css”重命名为“race.css”" description="重命名资源“racetxt.css”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="racetxt.css" name="race.css" stamp="1568424240521" updateReferences="true"/>
+</session>

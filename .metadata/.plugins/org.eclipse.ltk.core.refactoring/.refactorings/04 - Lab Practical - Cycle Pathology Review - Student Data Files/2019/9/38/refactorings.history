@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“04 - Lab Practical - Cycle Pathology Review - Student Data Files/rosetxt.htm”重命名为“rose.htm”" description="重命名资源“rosetxt.htm”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="rosetxt.htm" name="rose.htm" stamp="1568543568565" updateReferences="true"/>&#x0A;<refactoring comment="将资源“04 - Lab Practical - Cycle Pathology Review - Student Data Files/race(1).css”重命名为“race.css”" description="重命名资源“race(1).css”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="race(1).css" name="race.css" stamp="1568546951261" updateReferences="true"/>
+</session>

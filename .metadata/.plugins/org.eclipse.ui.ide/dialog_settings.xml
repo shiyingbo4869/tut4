@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\LENOVO\Desktop\05 - Lab Practical - Case 4 - Hamilton Conf Centre - Student Data Files"/>
+		<item value="C:\Users\LENOVO\Desktop\05-lab-prac-browyer-royalty-student-files\08-lab-prac-browyer-royalty-student-files"/>
+		<item value="C:\Users\LENOVO\Desktop\05-lab-prac-browyer-royalty-student-files"/>
+		<item value="C:\Users\LENOVO\Desktop\web158258\04 - Lab Practical - Cycle Pathology Review - Student Data Files"/>
+		<item value="C:\Users\LENOVO\Desktop\web158258\03-lab-prac-pnghs-choir"/>
+		<item value="C:\Users\LENOVO\Desktop\08-example-advanced-css3"/>
+		<item value="C:\Users\LENOVO\Desktop\08-lab-prac-browyer-royalty-student-files"/>
+		<item value="C:\Users\LENOVO\Documents\Tencent Files\1220149723\FileRecv\taxcalculator"/>
+		<item value="C:\Users\LENOVO\Desktop\src\nz\ac\massey\cs\sdc\taxcalculator"/>
+		<item value="C:\Users\LENOVO\Desktop\example"/>
+		<item value="C:\Users\LENOVO\Desktop\04 - Lab Practical - Cycle Pathology Review - Student Data Files"/>
+		<item value="C:\Users\LENOVO\Desktop\03-SunnyAcres"/>
+		<item value="C:\Users\LENOVO\Desktop\Problem02 - The Tempest - data files"/>
+		<item value="C:\Users\LENOVO\Desktop\Problem01  - dessertWEB - data files"/>
+		<item value="C:\Users\LENOVO\Desktop\assignment2"/>
+		<item value="C:\Users\LENOVO\Desktop\272 Assignment1-19023266"/>
+		<item value="C:\Users\LENOVO\Desktop\nz"/>
+		<item value="C:\Users\LENOVO\Desktop\Tutorial4-19023251"/>
+		<item value="C:\Users\LENOVO\Desktop\tutorial3"/>
+	</list>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.wst.web.ui.internal.wizards.SimpleWebProjectWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.m2e"/>
+			<item value="org.eclipse.wst.web.ui"/>
+		</list>
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item key="DIALOG_WIDTH" value="788"/>
+		<item key="DIALOG_FONT_NAME" value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI"/>
+		<item key="DIALOG_HEIGHT" value="699"/>
+		<item key="DIALOG_X_ORIGIN" value="577"/>
+		<item key="DIALOG_Y_ORIGIN" value="55"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\LENOVO\Desktop\tests"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+</section>

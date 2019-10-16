@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;scalatut2/src/tutorial7/scala/package.scala&apos; to &apos;tutorial7.scala&apos;" description="Rename resource &apos;package.scala&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/tutorial7/scala/package.scala" name="tutorial7.scala" stamp="1557907133355" updateReferences="true"/>
+</session>

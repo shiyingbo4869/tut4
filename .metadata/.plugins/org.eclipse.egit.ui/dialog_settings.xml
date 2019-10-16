@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="CommitDialog.authorValues">
+		<item value="shiyingbo &lt;1220149723@qq.com&gt;"/>
+		<item value="shiyingbo4869 &lt;1220149723@qq.com&gt;"/>
+		<item value="Shi Yingbo &lt;1220149723@qq.com&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="shiyingbo &lt;1220149723@qq.com&gt;"/>
+		<item value="shiyingbo4869 &lt;1220149723@qq.com&gt;"/>
+		<item value="Shi Yingbo &lt;1220149723@qq.com&gt;"/>
+	</list>
+	<list key="EGit.KnownHosts">
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+		<item value="bitbucket.org"/>
+	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/shiyingbo4869/251-Assignment-shiyingbo-zhangjing.git"/>
+		<item value="https://github.com/shiyingbo4869/251-Assignment-shiyingbo-zhangjing"/>
+	</list>
+	<section name="GitCommitSearchPage">
+		<item key="HISTORY_SIZE" value="0"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="sortItemState" value="false"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+		<list key="C:\Users\LENOVO\eclipse-workspace\159251assignment1\.git">
+			<item value="empty"/>
+		</list>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.push.PushResultDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="642"/>
+		<item key="DIALOG_Y_ORIGIN" value="237"/>
+		<item key="DIALOG_WIDTH" value="788"/>
+		<item key="DIALOG_HEIGHT" value="500"/>
+		<item key="DIALOG_FONT_NAME" value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI"/>
+		<list key="sashWeights">
+			<item value="600"/>
+			<item value="400"/>
+		</list>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.pull.PullResultDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="473"/>
+		<item key="DIALOG_Y_ORIGIN" value="198"/>
+		<item key="DIALOG_WIDTH" value="996"/>
+		<item key="DIALOG_HEIGHT" value="485"/>
+		<item key="DIALOG_FONT_NAME" value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI"/>
+	</section>
+</section>

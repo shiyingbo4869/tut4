@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+ @page {
+   size: 8.5in 11in portrait;
+   margin: 0.5in;
+}
+
+
+/* Styles to be used for print displays */
+
+
+/* Setting the page breaks in the document */
+
+section{
+   display: block;
+   page-break-after: always;
+   page-break-inside: avoid;
+}
+
+/* Hide page elements that will not be printed */
+
+header, nav, footer {
+   display: none;
+}
+
+
+/* Styles for the h1 heading */
+
+h1 {
+   font-size: 28pt;
+   text-align: center;
+   width: 100%;
+}
+
+/* Styles for the figure boxes */
+
+figure {
+   display: block;
+   text-align: center;
+   page-break-after: always;
+   page-break-inside: avoid;
+}
+
+figure img {
+   width: 5in;
+}
+
+
+figure:last-of-type {
+   page-break-after: avoid;
+} 
+  
+  /*可以控制打印方向，portrait： 纵向打印地,  landscape: 横向。*/
+  @page {
+  	size:A4 landscape; 
+    margin: 2cm;
+  }
+  
+  @page:right{
+   
+  	@bottom-left {
+    	margin: 10pt 0 30pt 0;
+    	border-top: .25pt solid #666;
+    	content: "browyer";
+    	font-size: 9pt;
+    	color: #333;
+  	}
+  	@bottom-right { 
+    	margin: 10pt 0 30pt 0;
+    	border-top: .25pt solid #666;
+    	content: counter(page);
+    	font-size: 9pt;
+  	}
+  }
+  
+}

@@ -1,0 +1,122 @@
+Found a 30 line (168 tokens) duplication in the following files: 
+Starting at line 145 of C:\Users\LENOVO\eclipse-workspace\shi\src\main\java\nz\ac\massey\cs\shi\Jtatext.java
+Starting at line 175 of C:\Users\LENOVO\eclipse-workspace\shi\src\main\java\nz\ac\massey\cs\shi\Jtatext.java
+
+		    item1_3.addActionListener(new ActionListener(){
+		    	public void actionPerformed(ActionEvent e){
+		    		File fileS = null;
+		    		if(fileS == null){
+		    			saveDia.setVisible(true);  
+	                    String dirPath = saveDia.getDirectory();  
+	                    String fileName = saveDia.getFile();  
+	                    
+	                    if(dirPath == null || fileName == null)
+	                    	return;
+	                    
+	                    fileS = new File(dirPath,fileName);  
+		    		}
+		    		
+		    		try{
+		    			BufferedWriter bufw = new BufferedWriter(new FileWriter(fileS));
+		    			String text = workArea.getText();
+		    			bufw.write(text);
+		    			bufw.close();
+		    		}catch(IOException er){
+		    			throw new RuntimeException("File save failed!"); 
+		    		}
+		    		String text = workArea.getText();
+		    		System.out.println(text);
+		    		System.out.println(text.contains("\n"));
+		    		System.out.println(text.contains("\r\n"));
+		    		new Print(text);
+		    	}
+		    });
+		    JMenuItem item1_4 = new JMenuItem("Save AS");
+=====================================================================
+Found a 8 line (58 tokens) duplication in the following files: 
+Starting at line 47 of C:\Users\LENOVO\eclipse-workspace\shi\src\test\java\nz\ac\massey\cs\shi\GuiTest.java
+Starting at line 72 of C:\Users\LENOVO\eclipse-workspace\shi\src\test\java\nz\ac\massey\cs\shi\GuiTest.java
+
+		StringBuilder sb = new StringBuilder("");
+		try (BufferedReader br = new BufferedReader(new FileReader(file))){
+			String line = null;
+        	
+        	while((line = br.readLine()) != null){
+        		System.out.println(line);
+        		sb.append(line);
+        	}
+=====================================================================
+Found a 7 line (50 tokens) duplication in the following files: 
+Starting at line 167 of C:\Users\LENOVO\eclipse-workspace\shi\src\main\java\nz\ac\massey\cs\shi\Jtatext.java
+Starting at line 197 of C:\Users\LENOVO\eclipse-workspace\shi\src\main\java\nz\ac\massey\cs\shi\Jtatext.java
+Starting at line 282 of C:\Users\LENOVO\eclipse-workspace\shi\src\main\java\nz\ac\massey\cs\shi\Jtatext.java
+
+		    		String text = workArea.getText();
+		    		System.out.println(text);
+		    		System.out.println(text.contains("\n"));
+		    		System.out.println(text.contains("\r\n"));
+		    		new Print(text);
+		    	}
+		    });
+=====================================================================
+Found a 7 line (44 tokens) duplication in the following files: 
+Starting at line 23 of C:\Users\LENOVO\eclipse-workspace\shi\src\test\java\nz\ac\massey\cs\shi\GuiTest.java
+Starting at line 47 of C:\Users\LENOVO\eclipse-workspace\shi\src\test\java\nz\ac\massey\cs\shi\GuiTest.java
+Starting at line 72 of C:\Users\LENOVO\eclipse-workspace\shi\src\test\java\nz\ac\massey\cs\shi\GuiTest.java
+
+		File file = new File("src/main/java/nz/ac/massey/cs/shi/Print.java"); 
+		//try resource,Automatic release program is executed
+		try (BufferedReader br = new BufferedReader(new FileReader(file))){
+			String line = null;
+        	
+        	while((line = br.readLine()) != null){
+        		System.out.println(line);
+=====================================================================
+Found a 13 line (30 tokens) duplication in the following files: 
+Starting at line 32 of C:\Users\LENOVO\eclipse-workspace\shi\src\test\java\nz\ac\massey\cs\shi\GuiTest.java
+Starting at line 57 of C:\Users\LENOVO\eclipse-workspace\shi\src\test\java\nz\ac\massey\cs\shi\GuiTest.java
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	
+		
+		
+	}
+	
+	//file search test
+	@Test
+	public void searchReplace(){
+=====================================================================
+Found a 5 line (27 tokens) duplication in the following files: 
+Starting at line 10 of C:\Users\LENOVO\eclipse-workspace\shi\src\main\java\nz\ac\massey\cs\shi\AboutBook.java
+Starting at line 11 of C:\Users\LENOVO\eclipse-workspace\shi\src\main\java\nz\ac\massey\cs\shi\LookHelp.java
+
+		this.setSize(200, 100);
+		this.setLocation(200,300);
+		this.setResizable(false);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setVisible(true);
+=====================================================================
+Found a 6 line (27 tokens) duplication in the following files: 
+Starting at line 56 of C:\Users\LENOVO\eclipse-workspace\shi\src\test\java\nz\ac\massey\cs\shi\GuiTest.java
+Starting at line 82 of C:\Users\LENOVO\eclipse-workspace\shi\src\test\java\nz\ac\massey\cs\shi\GuiTest.java
+
+        	System.out.println(sb.toString().replaceAll("HI", "HI World"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+=====================================================================
+Found a 5 line (25 tokens) duplication in the following files: 
+Starting at line 32 of C:\Users\LENOVO\eclipse-workspace\shi\src\test\java\nz\ac\massey\cs\shi\GuiTest.java
+Starting at line 83 of C:\Users\LENOVO\eclipse-workspace\shi\src\test\java\nz\ac\massey\cs\shi\GuiTest.java
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}

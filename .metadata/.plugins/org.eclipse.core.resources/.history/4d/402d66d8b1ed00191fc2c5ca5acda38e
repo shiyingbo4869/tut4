@@ -1,0 +1,687 @@
+Found a 75 line (374 tokens) duplication in the following files: 
+Starting at line 89 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\吉塔文特\Jtatext.java
+Starting at line 110 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Jtatext.java
+
+                		String line = null;
+                	
+                		while((line = bufr.readLine()) != null){
+                			workArea.append(line + "\r\n");
+                		}
+                	
+                		bufr.close(); //close text
+               		 }catch(IOException er1){
+                		throw new RuntimeException("File read failed!"); 
+                	}
+                
+	    	}
+	    });
+		
+	    JMenuItem item1_3 = new JMenuItem("Save");
+	    item1_3.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent e){
+	    		File fileS = null;
+	    		if(fileS == null){
+	    			saveDia.setVisible(true);  
+                    String dirPath = saveDia.getDirectory();  
+                    String fileName = saveDia.getFile();  
+                    
+                    if(dirPath == null || fileName == null)
+                    	return;
+                    
+                    fileS = new File(dirPath,fileName);  
+	    		}
+	    		
+	    		try{
+	    			BufferedWriter bufw = new BufferedWriter(new FileWriter(fileS));
+	    			String text = workArea.getText();
+	    			bufw.write(text);
+	    			bufw.close();
+	    		}catch(IOException er){
+	    			throw new RuntimeException("File save failed!"); 
+	    		}
+	    	}
+	    });
+	    JMenuItem item1_4 = new JMenuItem("Save AS");
+	    item1_4.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent e){
+	    		File fileS = null;
+	    		if(fileS == null){
+	    			saveDia.setVisible(true);  
+                    String dirPath = saveDia.getDirectory();  
+                    String fileName = saveDia.getFile();  
+                    
+                    if(dirPath == null || fileName == null)
+                    	return;
+                    
+                    fileS = new File(dirPath,fileName);  
+	    		}
+	    		
+	    		try{
+	    			BufferedWriter bufw = new BufferedWriter(new FileWriter(fileS));
+	    			String text = workArea.getText();
+	    			bufw.write(text);
+	    			bufw.close();
+	    		}catch(IOException er){
+	    			throw new RuntimeException("File save failed!"); 
+	    		}
+	    	}
+	    });
+	    JMenuItem item1_5 = new JMenuItem("Quit");
+	    item1_5.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent e){
+	    		System.exit(0);
+	    	}
+	    });
+	    
+	    JMenuItem item2_1 = new JMenuItem("Select text");
+	    JMenuItem item2_2 = new JMenuItem("Cut");
+	    JMenuItem item2_3 = new JMenuItem("Copy");  		
+	    JMenuItem item2_4 = new JMenuItem("Paste");
+=====================================================================
+Found a 43 line (234 tokens) duplication in the following files: 
+Starting at line 123 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\Replace.java
+Starting at line 109 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Replace.java
+
+		txt_find.setText("");
+		txt_replace.setText("");
+	}
+ 
+	public static void changeFile(File file) throws IOException {
+		BufferedReader br = null;
+		try {
+			if (!file.exists()) {
+				JOptionPane.showMessageDialog(null, "File path error!", "Error",
+						JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			FileReader fileReader = new FileReader(file);
+			br = new BufferedReader(fileReader);
+			StringBuffer sbf = new StringBuffer("");
+			try {
+				for (String tmp = null; (tmp = br.readLine()) != null; tmp = null) {
+					// 在这里做替换操作
+					if (tmp.contains(find)) {
+						tmp = tmp.replaceAll(find, replace);
+						sbf.append(tmp);
+						sbf.append(System.getProperty("line.separator"));
+						// 文件的重新写入
+						BufferedWriter bw = new BufferedWriter(new FileWriter(
+								path));
+						bw.write(sbf.toString());
+						JOptionPane.showMessageDialog(null, "The file content has been replaced successfully!",
+								"confirm", JOptionPane.YES_OPTION);
+						bw.close();
+					} else {
+						JOptionPane.showMessageDialog(null, "The file does not contain the content to be replaced！",
+								"confirm", JOptionPane.YES_OPTION);
+					}
+ 
+				}
+				br.close();
+			} catch (IOException e1) {
+				JOptionPane.showMessageDialog(null, "Read file error", "Error",
+						JOptionPane.ERROR_MESSAGE);
+				e1.printStackTrace();
+				return;
+			}
+		} catch (FileNotFoundException e1) {
+=====================================================================
+Found a 32 line (194 tokens) duplication in the following files: 
+Starting at line 36 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Print.java
+Starting at line 36 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Save.java
+
+		job.setPrintable(Print.this); //Add print task	
+		try {  	
+			job.print();  //Perform print tasks	
+		} catch (PrinterException e1) {
+			e1.printStackTrace();  	
+		}  	
+		int ok = JOptionPane.showConfirmDialog(this,		"Export print PDF file successfully, whether to continue printing", ""
+				, JOptionPane.YES_OPTION);
+		if(ok == JOptionPane.NO_OPTION){
+			this.dispose();
+		}
+	}	
+	@Override	
+	public int print(Graphics graphics, PageFormat pageFormat, 	int pageIndex) throws PrinterException {
+		Graphics2D g = (Graphics2D) graphics;  
+		int x = (int)pageFormat.getImageableX(); 
+		int y = (int)pageFormat.getImageableY();
+		switch(pageIndex){
+			case 0:  	
+				g.setColor(Color.RED);
+				String[] arr = text.split("\n");
+				int[] index = new int[]{10};
+				for(String line : arr){
+					g.drawString(line, x + 10, y + index[0]);
+					index[0] += 10;
+				}
+				return PAGE_EXISTS;  
+			default: return NO_SUCH_PAGE;  	
+		}  	
+	}
+	public static void main(String[] args) {
+		new Print("123");	
+=====================================================================
+Found a 30 line (152 tokens) duplication in the following files: 
+Starting at line 58 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\吉塔文特\Jtatext.java
+Starting at line 66 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Jtatext.java
+
+		FileDialog saveDia;  
+		//The default mode is FileDialog.LOAD  
+        openDia = new FileDialog(this,"Open",FileDialog.LOAD);  
+        saveDia = new FileDialog(this,"Save AS",FileDialog.SAVE);  
+	  
+	    
+	    JMenuItem item1_1 = new JMenuItem("New");
+	    item1_1.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent e){
+	    		 workArea.setText("");// clear text
+	    	}
+	    });
+	    JMenuItem item1_2 = new JMenuItem("Open");
+	    item1_2.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent e){
+	    		openDia.setVisible(true);
+	    		String dirPath = openDia.getDirectory();//Get file path   
+                	String filename = openDia.getFile();// Get file name
+                
+              // Returns null if the open path or directory is empty
+                	if(dirPath == null || filename == null){
+                		return;
+                	}
+                
+               		workArea.setText("");//clear text
+                
+                	File fileO = new File(dirPath,filename); 
+                
+               	 	try{
+                		BufferedReader bufr = new BufferedReader(new FileReader(fileO));
+=====================================================================
+Found a 27 line (150 tokens) duplication in the following files: 
+Starting at line 171 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\吉塔文特\Jtatext.java
+Starting at line 223 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Jtatext.java
+
+	    JMenuItem item3_2 = new JMenuItem("Word wrap");
+	    item3_2.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent e){
+	    		Object source = e.getSource();
+	    		
+	    		if(source == item3_2)
+	    			workArea.setLineWrap(true);    //word wrap
+	    		else if(source != item3_2)
+	    			workArea.setLineWrap(false);
+	    	}
+	    });
+	    
+	    JMenuItem item4_1 = new JMenuItem("Help");
+	    item4_1.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent event){
+	    		new LookHelp();
+	    	}
+	    });
+	    JMenuItem item4_2 = new JMenuItem("About");
+	    item4_2.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent event){
+	    		new AboutBook();
+	    	}
+	    });
+	    JMenuItem item4_3 = new JMenuItem("Print");
+	    item4_3.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent event){
+=====================================================================
+Found a 19 line (123 tokens) duplication in the following files: 
+Starting at line 64 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\Replace.java
+Starting at line 58 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Replace.java
+
+		this.txt_path.setBounds(150, 50, 200, 20);
+		this.txt_find.setBounds(150, 80, 200, 20);
+		this.txt_replace.setBounds(150, 110, 200, 20);
+		this.btn_sub.setBounds(130, 180, 80, 20);
+		this.btn_sub.addActionListener(new ActionListener()// 匿名类实现ActionListener接口
+				{
+					public void actionPerformed(ActionEvent e) {
+						btnsub_ActionEvent(e);
+					}
+				});
+		this.btn_reset.setBounds(245, 180, 80, 20);
+		this.btn_reset.addActionListener(new ActionListener()// 匿名类实现ActionListener接口
+				{
+					public void actionPerformed(ActionEvent e) {
+						btnreset_ActionEvent(e);
+					}
+				});
+		this.pnl_mian.add(lbl_help);// 加载标签到面板
+		this.pnl_mian.add(lbl_path);
+=====================================================================
+Found a 25 line (121 tokens) duplication in the following files: 
+Starting at line 104 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\吉塔文特\Jtatext.java
+Starting at line 129 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\吉塔文特\Jtatext.java
+Starting at line 124 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Jtatext.java
+Starting at line 149 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Jtatext.java
+
+	    item1_3.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent e){
+	    		File fileS = null;
+	    		if(fileS == null){
+	    			saveDia.setVisible(true);  
+                    String dirPath = saveDia.getDirectory();  
+                    String fileName = saveDia.getFile();  
+                    
+                    if(dirPath == null || fileName == null)
+                    	return;
+                    
+                    fileS = new File(dirPath,fileName);  
+	    		}
+	    		
+	    		try{
+	    			BufferedWriter bufw = new BufferedWriter(new FileWriter(fileS));
+	    			String text = workArea.getText();
+	    			bufw.write(text);
+	    			bufw.close();
+	    		}catch(IOException er){
+	    			throw new RuntimeException("File save failed!"); 
+	    		}
+	    	}
+	    });
+	    JMenuItem item1_4 = new JMenuItem("Save AS");
+=====================================================================
+Found a 20 line (98 tokens) duplication in the following files: 
+Starting at line 102 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\Replace.java
+Starting at line 89 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Replace.java
+
+		} else if (find.equals("")) {
+			JOptionPane.showMessageDialog(null, "Search object cannot be empty!", "Error",
+					JOptionPane.ERROR_MESSAGE);
+			return;
+		} else if (replace.equals("")) {
+			JOptionPane.showMessageDialog(null, "Replace content cannot be empty!", "Error",
+					JOptionPane.ERROR_MESSAGE);
+			return;
+		} else {
+			File file = new File(path);
+			try {
+				changeFile(file);
+			} catch (Exception e1) {
+				e1.printStackTrace();
+				return;
+			}
+			this.dispose();
+		}
+	}
+	public void btnreset_ActionEvent(ActionEvent e) {
+=====================================================================
+Found a 11 line (89 tokens) duplication in the following files: 
+Starting at line 198 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\吉塔文特\Jtatext.java
+Starting at line 254 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Jtatext.java
+
+	    		new Print();
+	    	}
+	    });
+	    
+	    //Adds a menu item to a menu
+	    file.add(item1_1);file.add(item1_2);file.add(item1_3);file.add(item1_4);file.add(item1_5);
+	    view.add(item2_1);view.add(item2_2);view.add(item2_3);view.add(item2_4);
+	    search.add(item3_1);search.add(item3_2);
+	    help.add(item4_1);help.add(item4_2);help.add(item4_3);
+	    	    
+	}//End of constructor
+=====================================================================
+Found a 17 line (85 tokens) duplication in the following files: 
+Starting at line 26 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\Print.java
+Starting at line 25 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Print.java
+
+		setSize(800, 600);	//璁剧疆绐椾綋澶у皬浣嶇疆	
+		add(printBtn, BorderLayout.NORTH);	
+		add(scrollPane, BorderLayout.CENTER);	
+		printBtn.addActionListener(this);	
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
+		setVisible(true);	
+		}	
+	@Override	
+	public void actionPerformed(ActionEvent e) {
+		//鑾峰彇鎵撳嵃鏈嶅姟瀵硅薄  	
+		PrinterJob job = PrinterJob.getPrinterJob();       	
+		job.setPrintable(Print.this); //娣诲姞鎵撳嵃浠诲姟	
+		try {  	
+			job.print();  //鎵ц鎵撳嵃浠诲姟	
+		} catch (PrinterException e1) {
+			e1.printStackTrace();  	
+		}  	
+=====================================================================
+Found a 21 line (83 tokens) duplication in the following files: 
+Starting at line 29 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\吉塔文特\Jtatext.java
+Starting at line 37 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Jtatext.java
+
+	public Jtatext()
+	{
+		
+		super("Test Editor   " + new Date());
+		
+		//Create a JMenuBar object
+		JMenuBar mBar = new JMenuBar();
+		//Set menu bar objects in containers such as JFrame, adding the menu bar to the frame container
+		this.setJMenuBar(mBar);
+		
+		//Create menu object
+		JMenu file = new JMenu("File");
+		JMenu search = new JMenu("Search");
+		JMenu view = new JMenu("View");
+		JMenu help = new JMenu("Help");
+		
+		//Adds a menu to the menu bar
+		mBar.add(file);
+		mBar.add(search);
+		mBar.add(view);
+		mBar.add(help);
+=====================================================================
+Found a 15 line (82 tokens) duplication in the following files: 
+Starting at line 41 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\Replace.java
+Starting at line 38 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Replace.java
+
+		txt_path = new JTextField();
+		txt_find = new JTextField();
+		txt_replace = new JTextField();
+		btn_sub = new JButton();
+		btn_reset = new JButton();
+		userInit();
+	}
+	public void userInit() {
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 设置关闭框架的同时结束程序
+		this.setSize(500, 300);// 设置框架大小为长500,宽200
+		this.setResizable(false);// 设置框架不可以改变大小
+		this.setTitle("Search Replace");// 设置框架标题
+		this.pnl_mian.setLayout(null);// 设置面板布局管理
+		this.lbl_help.setText("Search Replace");// 设置标签标题
+		this.lbl_path.setText("filepath:");
+=====================================================================
+Found a 16 line (78 tokens) duplication in the following files: 
+Starting at line 5 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\AboutBook.java
+Starting at line 5 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\AboutBook.java
+
+public class AboutBook extends JFrame{
+	public AboutBook(){
+		super("About");
+		this.setSize(200, 100);
+		this.setLocation(200,300);
+		this.setResizable(false);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setVisible(true);
+		
+		JPanel panel = new JPanel();
+		JLabel label = new JLabel("Author: Shi Yingbo  Zhang Jing");
+		
+		panel.add(label);
+		this.add(panel);
+	}
+}
+=====================================================================
+Found a 14 line (75 tokens) duplication in the following files: 
+Starting at line 7 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\LookHelp.java
+Starting at line 7 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\LookHelp.java
+
+public class LookHelp extends JFrame{
+	
+	public LookHelp(){
+		super("Help");
+		this.setSize(500, 300);
+		this.setLocation(200,300);
+		this.setResizable(false);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setVisible(true);
+		
+		Container c = this.getContentPane();
+		c.setLayout(new GridLayout(5,0));
+		
+		JLabel label1 = new JLabel("1. The menu item in the menu bar can be clicked to select the function.");
+=====================================================================
+Found a 14 line (71 tokens) duplication in the following files: 
+Starting at line 23 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Print.java
+Starting at line 23 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Save.java
+
+	public Print(String text) {	
+		this.text = text;
+		setSize(800, 600);	//Sets the form size position	
+		add(printBtn, BorderLayout.NORTH);	
+		add(scrollPane, BorderLayout.CENTER);	
+		printBtn.addActionListener(this);	
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
+		setVisible(true);	
+		}	
+	@Override	
+	public void actionPerformed(ActionEvent e) {
+		//Gets the print service object 	
+		PrinterJob job = PrinterJob.getPrinterJob();       	
+		job.setPrintable(Print.this); //Add print task	
+=====================================================================
+Found a 8 line (64 tokens) duplication in the following files: 
+Starting at line 44 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\Print.java
+Starting at line 47 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Print.java
+Starting at line 47 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Save.java
+
+	}	
+	@Override	
+	public int print(Graphics graphics, PageFormat pageFormat, 	int pageIndex) throws PrinterException {
+		Graphics2D g = (Graphics2D) graphics;  
+		int x = (int)pageFormat.getImageableX(); 
+		int y = (int)pageFormat.getImageableY();
+		switch(pageIndex){
+		case 0:  	g.setColor(Color.RED);
+=====================================================================
+Found a 12 line (61 tokens) duplication in the following files: 
+Starting at line 26 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\Print.java
+Starting at line 25 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Save.java
+
+		setSize(800, 600);	//璁剧疆绐椾綋澶у皬浣嶇疆	
+		add(printBtn, BorderLayout.NORTH);	
+		add(scrollPane, BorderLayout.CENTER);	
+		printBtn.addActionListener(this);	
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
+		setVisible(true);	
+		}	
+	@Override	
+	public void actionPerformed(ActionEvent e) {
+		//鑾峰彇鎵撳嵃鏈嶅姟瀵硅薄  	
+		PrinterJob job = PrinterJob.getPrinterJob();       	
+		job.setPrintable(Print.this); //娣诲姞鎵撳嵃浠诲姟	
+=====================================================================
+Found a 8 line (58 tokens) duplication in the following files: 
+Starting at line 44 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\GuiTest.java
+Starting at line 69 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\GuiTest.java
+
+		StringBuilder sb = new StringBuilder("");
+		try (BufferedReader br = new BufferedReader(new FileReader(file))){
+			String line = null;
+        	
+        	while((line = br.readLine()) != null){
+        		System.out.println(line);
+        		sb.append(line);
+        	}
+=====================================================================
+Found a 10 line (54 tokens) duplication in the following files: 
+Starting at line 85 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\Replace.java
+Starting at line 77 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Replace.java
+
+		this.pnl_mian.add(txt_path);
+		this.pnl_mian.add(txt_find);
+		this.pnl_mian.add(txt_replace);
+		this.pnl_mian.add(btn_sub);
+		this.pnl_mian.add(btn_reset);
+		this.add(pnl_mian);// 加载面板到框架
+		this.setVisible(true);// 设置框架可显
+	}
+ 
+	public void btnsub_ActionEvent(ActionEvent e) {
+=====================================================================
+Found a 12 line (53 tokens) duplication in the following files: 
+Starting at line 28 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\Replace.java
+Starting at line 27 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Replace.java
+
+	public JTextField txt_find;
+	public JTextField txt_replace;
+	public JButton btn_sub;
+	public JButton btn_reset;
+	public static String path;
+	public static String find;
+	public static String replace;
+	public Replace() {
+		pnl_mian = new JPanel();
+		lbl_help = new JLabel();
+		lbl_find = new JLabel();
+		lbl_replace = new JLabel();
+=====================================================================
+Found a 7 line (49 tokens) duplication in the following files: 
+Starting at line 55 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\Replace.java
+Starting at line 51 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Replace.java
+
+		this.lbl_path.setText("filepath:");
+		this.lbl_find.setText("search:");
+		this.lbl_replace.setText("replace:");
+		this.btn_sub.setText("confirm");
+		this.btn_reset.setText("reset");
+		this.lbl_help.setBounds(200, 25, 100, 21);// 设置标签x坐标120,y坐标20,长60,宽20
+		this.lbl_path.setBounds(100, 50, 60, 20);
+=====================================================================
+Found a 9 line (49 tokens) duplication in the following files: 
+Starting at line 210 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\吉塔文特\Jtatext.java
+Starting at line 29 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Jtatext.java
+
+	public static void main(String args[])
+	{
+		Jtatext app = new Jtatext();	
+		app.setSize(600, 400);
+		app.setLocation(200,200);
+		app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		app.setVisible(true);
+		
+	}
+=====================================================================
+Found a 10 line (49 tokens) duplication in the following files: 
+Starting at line 87 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Search.java
+Starting at line 101 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Search.java
+
+	 k=strA.lastIndexOf(strB, jTextArea.getCaretPosition()-findText.getText().length()-1); //往前查找
+	 if(k>-1)
+	 { //String strData=strA.subString(k,strB.getText().length()+1);
+	 jTextArea.setCaretPosition(k);		//选中字符串
+	 jTextArea.select(k,k+strB.length());
+	 }
+	 else
+	 { JOptionPane.showMessageDialog(null,"找不到您查找的内容！","查找",JOptionPane.INFORMATION_MESSAGE);
+	 }
+	}
+=====================================================================
+Found a 7 line (44 tokens) duplication in the following files: 
+Starting at line 23 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\GuiTest.java
+Starting at line 44 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\GuiTest.java
+Starting at line 69 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\GuiTest.java
+
+		File file = new File("src/Jtatext/Print.java"); 
+		//try resource,执行完自动释放程序
+		try (BufferedReader br = new BufferedReader(new FileReader(file))){
+			String line = null;
+        	
+        	while((line = br.readLine()) != null){
+        		System.out.println(line);
+=====================================================================
+Found a 8 line (33 tokens) duplication in the following files: 
+Starting at line 163 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\吉塔文特\Jtatext.java
+Starting at line 215 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Jtatext.java
+
+	    JMenuItem item2_4 = new JMenuItem("Paste");
+	    
+	    JMenuItem item3_1 = new JMenuItem("search replace");
+	    item3_1.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent event){
+	    		new Replace();
+	    	}
+	    });
+=====================================================================
+Found a 2 line (31 tokens) duplication in the following files: 
+Starting at line 24 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\LookHelp.java
+Starting at line 25 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\LookHelp.java
+
+		JLabel label5 = new JLabel("5. The disadvantage of notepad is that it cannot change the style, size and form of the font.");
+		c.add(label1);c.add(label2);c.add(label3);c.add(label4);c.add(label5);
+=====================================================================
+Found a 4 line (31 tokens) duplication in the following files: 
+Starting at line 61 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\Replace.java
+Starting at line 56 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Replace.java
+
+		this.lbl_path.setBounds(100, 50, 60, 20);
+		this.lbl_find.setBounds(100, 80, 60, 20);
+		this.lbl_replace.setBounds(100, 110, 60, 25);
+		this.txt_path.setBounds(150, 50, 200, 20);
+=====================================================================
+Found a 8 line (30 tokens) duplication in the following files: 
+Starting at line 20 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\Replace.java
+Starting at line 20 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Replace.java
+
+public class Replace extends JFrame {
+	private static final long serialVersionUID = 1L;
+	public JPanel pnl_mian;
+	public JLabel lbl_help;
+	public JLabel lbl_find;
+	public JLabel lbl_replace;
+	public JLabel lbl_path;
+	public JTextField txt_path;
+=====================================================================
+Found a 11 line (30 tokens) duplication in the following files: 
+Starting at line 31 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\GuiTest.java
+Starting at line 54 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\GuiTest.java
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	//文件搜索替换
+	@Test
+	public void searchReplace(){
+=====================================================================
+Found a 6 line (28 tokens) duplication in the following files: 
+Starting at line 18 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Print.java
+Starting at line 18 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\Save.java
+
+public class Print extends JFrame implements Printable, ActionListener {
+	private String text;
+	private JButton printBtn = new JButton("Print");   	
+	private JScrollPane scrollPane = new JScrollPane();	//Set window information
+	//add various panel buttons,initialize the button listener.	
+	public Print(String text) {	
+=====================================================================
+Found a 5 line (27 tokens) duplication in the following files: 
+Starting at line 8 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\AboutBook.java
+Starting at line 11 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\251-Assignment-shiyingbo-zhangjing\SRC\Jtatext\LookHelp.java
+Starting at line 8 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\AboutBook.java
+Starting at line 11 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\LookHelp.java
+
+		this.setSize(200, 100);
+		this.setLocation(200,300);
+		this.setResizable(false);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setVisible(true);
+=====================================================================
+Found a 6 line (27 tokens) duplication in the following files: 
+Starting at line 53 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\GuiTest.java
+Starting at line 79 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\GuiTest.java
+
+        	System.out.println(sb.toString().replaceAll("HI", "HI World"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+=====================================================================
+Found a 5 line (25 tokens) duplication in the following files: 
+Starting at line 31 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\GuiTest.java
+Starting at line 80 of C:\Users\LENOVO\eclipse-workspace\159251assignment1\src\Jtatext\GuiTest.java
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}

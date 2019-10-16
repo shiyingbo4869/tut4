@@ -1,0 +1,43 @@
+package Jtatext;
+package Jtatext;
+
+import java.awt.event.ActionEvent;
+
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+
+import javax.swing.JFrame;
+
+import javax.swing.JPanel;
+
+import javax.swing.JScrollPane;
+
+import javax.swing.JTextArea;
+
+import javax.swing.JTextField;
+
+public class Jtatext extends JFrame implements ActionListener{
+
+	private JPanel jp=new JPanel();
+	private JButton[] JbA={new JButton("自动换行"),
+
+			new JButton("不换行")};
+
+	private JTextArea jta=new JTextArea();
+
+	private JScrollPane jsp=new JScrollPane(jta);
+
+	public Jtatext(){
+
+	}
+
+	public void actionPerformed(ActionEvent e){
+
+	}
+
+public static void main(String[] args) {
+
+}
+
+}

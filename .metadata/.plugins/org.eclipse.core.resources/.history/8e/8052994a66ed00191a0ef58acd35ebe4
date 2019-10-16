@@ -1,0 +1,64 @@
+package Jtatext;
+
+public class Search implements ActionListener{
+	  JLabel label1;
+	  JTextField fiel,fiel2;
+			JButton but1;
+	5、		int next;
+	6、		Tihuan(){
+	7、		JFrame frame=new JFrame();
+	8、		frame.setSize(350,160);
+	9、		frame.setLocation(1000, 400);
+	10、		frame.setResizable(false);
+	11、		frame.setTitle("查找");
+	12、		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	13、		JPanel jpanel=new JPanel();
+	14、		label1=new JLabel("查找内容(N)");
+	15、		fiel=new JTextField(10);
+	16、		but1=new JButton("查找 下一 个(F)");//对按钮添加事件
+	17、		but1.addActionListener(this);
+	18、		JLabel label2=new JLabel("替   换  为(P)");
+	19、		fiel2=new JTextField(10);
+	20、		JButton but2=new JButton("替     换    (   R   )");
+	21、		but2.addActionListener(this);
+	22、		JButton but3=new JButton("取消");
+	23、		JCheckBox box=new JCheckBox("区分大小写(C)");
+	24、		jpanel.add(label1);
+	25、		jpanel.add(fiel); 
+	26、		jpanel.add(but1);
+	27、		jpanel.add(label2);
+	28、		jpanel.add(fiel2);
+	29、		jpanel.add(but2);
+	30、		jpanel.add(box);
+	31、		jpanel.add(but3);
+	32、		frame.add(jpanel);
+	33、		frame.setVisible(true);
+	34、		}
+	35、	public void actionPerformed(ActionEvent e) {
+	36、			if(e.getActionCommand()=="查找 下一 个(F)") {
+	37、				String s=text.getText();
+	38、				String m=fiel.getText();
+	39、				int x=s.indexOf(m,text.getSelectionEnd());
+	40、				int n=x+m.length();
+	41、				text.select(x,n);
+	42、				next=n;
+	43、				text.select(next,s.length());
+	44、				String ss=text.getSelectedText();
+	45、				int newstartp=ss.indexOf(fiel.getText())+next;
+	46、				int newendp=newstartp+fiel.getText().length();
+	47、				text.select(newstartp, newendp);
+	48、				
+	49、			}
+	50、			if(e.getActionCommand()=="替     换    (   R   )") {
+	51、				int nexttemp=next;					//获取上次查找的终点做为未查找字符串的起点
+	52、				String strall=text.getText();
+	53、				text.select(nexttemp, strall.length());	//选中所有未查找的字符串
+	54、				String strnext=text.getSelectedText();
+	55、				int newstartp=strnext.indexOf(fiel.getText())+nexttemp;
+	56、				int newendp=newstartp+fiel.getText().length();
+	57、				text.select(newstartp, newendp); //选中字符串
+	58、	text.replaceRange(fiel2.getText(), newstartp, newendp); //选中字符替换	
+	59、	
+	60、				}
+	61、			} 
+	62、		}

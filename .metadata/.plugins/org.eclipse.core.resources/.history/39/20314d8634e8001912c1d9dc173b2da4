@@ -1,0 +1,56 @@
+package Jtatext;
+import java.awt.event.ActionEvent;
+
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+
+import javax.swing.JFrame;
+
+import javax.swing.JPanel;
+
+import javax.swing.JScrollPane;
+
+import javax.swing.JTextArea;
+
+import javax.swing.JTextField;
+
+public class Jtatext extends JFrame implements ActionListener{
+	private JPanel jp=new JPanel();
+	private JButton[] JbA={
+			new JButton("自动换行"),
+			new JButton("不换行")
+			};
+	private JTextArea jta=new JTextArea();
+	private JScrollPane jsp=new JScrollPane(jta);
+	public Jtatext(){
+		jp.setLayout(null);
+		for(int i=0;i<2;i++){
+			JbA[i].setBounds(20+i*110, 120, 90, 20);
+			jp.add(JbA[i]);
+			JbA[i].addActionListener(this);
+		}
+		jsp.setBounds(20, 20, 450, 80);
+		jp.add(jsp);
+		jta.setLineWrap(true);
+		this.add(jp);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setTitle("文本区域");
+		this.setTitle("adhf");
+		this.setResizable(false);
+		this.setBounds(100, 100, 500, 180);
+		this.setVisible(true);
+	}
+	public void actionPerformed(ActionEvent e){
+		if(e.getSource()==JbA[0]){
+			jta.setLineWrap(true);
+		}
+		else if(e.getSource()==JbA[1]){
+			jta.setLineWrap(false);
+		}
+	}
+	public static void main(String[] args) {
+		new Jtatext();
+	}
+
+}

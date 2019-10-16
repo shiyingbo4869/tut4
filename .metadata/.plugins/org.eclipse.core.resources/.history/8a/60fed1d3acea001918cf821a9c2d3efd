@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+@media print {
+  section h1 {
+    color: #000;
+    background: none;
+  }
+  
+  nav.vertical {
+    display: none;
+  }
+   
+  section p {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  /*可以控制打印方向，portrait： 纵向打印地,  landscape: 横向。*/
+  @page {
+  	size:A4 landscape; 
+    margin: 2cm;
+  }
+  
+  @page:right{
+   
+  	@bottom-left {
+    	margin: 10pt 0 30pt 0;
+    	border-top: .25pt solid #666;
+    	content: "browyer";
+    	font-size: 9pt;
+    	color: #333;
+  	}
+  	@bottom-right { 
+    	margin: 10pt 0 30pt 0;
+    	border-top: .25pt solid #666;
+    	content: counter(page);
+    	font-size: 9pt;
+  	}
+  }
+  
+}
